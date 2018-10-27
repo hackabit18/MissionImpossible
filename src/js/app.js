@@ -255,7 +255,7 @@ function checkDomainAvaibility() {
 			console.log("Domain Unavailable");
 			$("#domainIsAvailable").hide();
 			$("#domainIsUnavailable").show();
-			$('#websiteName').attr('readonly', true);
+			$('#websiteName').attr('readonly', false);
 		}
 	}).catch(function(err) {
 		
