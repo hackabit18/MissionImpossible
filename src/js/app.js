@@ -348,7 +348,7 @@ function deleteHashOnBlockChain(name) {
 		  renderWebsiteData();
 		});
 	}).catch(function(err) {
-		console.log(err);
+		alert("There was some error during deletion of file");
 	});
 }
 }
