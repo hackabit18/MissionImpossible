@@ -706,7 +706,7 @@ function getChangedFileName(dirName){
 
 	for(var i=0;i < (dirLength-1);i++){
 		//dirStructure = dirStructure+dirName[i]+"#$@!=%&()";
-		if(dirName[i] !== "" && dirName[i] !== "http:" && dirName[i] !== "https:" && dirName[i] !== "localhost:3000" && dirName[i] !== "127.0.0.1:5500")
+		if(dirName[i] !== "" && dirName[i] !== "http:" && dirName[i] !== "https:" && dirName[i] !== "localhost:3000" && dirName[i] !== "127.0.0.1:5500" && dirName[i] !== "shahi9935.github.io" && dirName[i] !== "BC-Hosting")
 		dirStructure = dirStructure+dirName[i]+"#$@!=%&()";
 	}
 
