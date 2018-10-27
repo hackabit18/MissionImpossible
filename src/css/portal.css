@@ -4,13 +4,21 @@
   text-align: center;
 }
 #domainsList{
-  background-color:#9bafc1;
+  background-color:#323130;
+  color:white;
   height:inherit;
+}
+#fileBeingUploadedList{
+  font-family:'Ubuntu';
+  font-weight:600;  
 }
 #mainInfo{
 min-height:550px;
 }
 .domainIndividualFile{
+  font-family:'Ubuntu';
+  background-color:white;
+  font-weight:600;
   border:1px solid grey;
   text-align:left;
   padding:5px 0px 5px 10px;
@@ -23,7 +31,6 @@ min-height:550px;
   line-height: 45px;
   text-align: center;
   font-family:'Ubuntu';
-  font-weight: 600;
     -moz-user-select: none;
     -webkit-user-select:none;
     user-select:none;

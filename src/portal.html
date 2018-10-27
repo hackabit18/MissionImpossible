@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <title>Portal</title>
 </head>
-<body class="container-fluid" >
+<body class="container-fluid">
     <center>
             <div class="fileListDuringUpload" aria-hidden="true">
                     <div class="modal-dialog1" style="width:600px;height:300px;overflow-y:scroll;background-color:#e3e9f2">
-                      <div class="modal-header1" style="background-color:#8999b2">
+                      <div class="modal-header1" style="background-color:#323130;color:white">
                         <h2>Following files are being uploaded</h2>
                         <h2>Please do not refresh the page</h2>
                         <a href="#" class="btn-close1 closemodale1" aria-hidden="true">&times;</a>
@@ -35,7 +35,7 @@
     <img src="loading.gif">
     </div>
     </center>
-    <div id="portal" style="display:none;height:100%;">
+    <div id="portal" style="display:none;height:100%;width:100%">
     <!--NAV BEGINS-->
     <div class="row" >
             <img src="logo7.png" style="float:left">
@@ -55,7 +55,7 @@
 <!-- Modal -->
 <div class="modale1" aria-hidden="true">
     <div class="modal-dialog1">
-      <div class="modal-header1">
+      <div class="modal-header1" style="background-color:#323130;color:white">
         <h2>Check Availability</h2>
         <a href="#" class="btn-close1 closemodale1" aria-hidden="true">&times;</a>
       </div>
@@ -84,7 +84,7 @@
             <button class="btn btn-success openmodale1" style="margin-bottom:10px;margin-top:10px" >Create New</button>
             <!-- <p><a href="#" class="btn1 btn-big1 openmodale1">Open Login Box</a></p> -->
         </div>
-        <div class="col-10" id="domainPortal" style="background-color:#e6f2ff;">
+        <div class="col-10" id="domainPortal" style="background-color:#215b7d;">
             <img src="domainViewLoading.gif" id="domainViewLoading" style="display:none;width:20%;margin-top:10%">
             <center>
             <div style="width:400px;margin-top:20px" id="domainInfo">
@@ -93,11 +93,12 @@
                 <br><br>
                 <center>
             <div id="file_upload_form" style="margin-left:none;margin-right:none;width:500px;">
-                    <ol id="demo-container" style="margin-left:none;margin-right:none;list-style: none;border:4px inset orangered;padding:10px;border-radius:10px">
+                    <ol id="demo-container" style="margin-left:none;margin-right:none;list-style: none;padding:10px;border-radius:10px;background-color:white">
+                      
                         <li>
                             <label>
                                 <span class="form-label" style="font-size:30px">Upload Files</span><br>
-                                <input type="file" accept="application/zip" id="file-input" style="margin-top:10px">
+                                <input type="file" accept="application/zip" id="file-input" style="margin-top:10px;margin-left:100px">
                             </label>
                         </li>
                         <li style="display:none">
