@@ -20,13 +20,23 @@ contract Website {
     	require (msg.sender == admin); 
     	_; 
     }
+
+    modifier emptyStringCheck(string name) {
+    	bytes memory tempName = bytes(name); // Uses memory
+    	uint flag=0;
+		if (tempName.length == 0) {
+		    flag=1;
+		} 
+		require(flag == 0);
+		_;
+    }
     
 	function Website (address _admin, string _name) {
 		admin = _admin;
 		website_name = _name;
 	}	
 
-	function addFile(string _name, string _hash) public restricted {
+	function addFile(string _name, string _hash) public restricted emptyStringCheck(_name) {
 		require(!is_file_name_acquired[_name]);
 		file[_name] = _hash;
 		file_name.push(_name);
@@ -42,6 +52,7 @@ contract Website {
 	function deleteFile(string _name) public restricted {
 		require(is_file_name_acquired[_name]);
 		is_file_name_acquired[_name] = false;
+		delete is_file_name_acquired[_name];
 		uint index = file_index[_name];
 		delete file_index[_name];
 		delete file[_name];

@@ -30,6 +30,7 @@ var entries_length = 0;
 var check_for_only_html = 0;
 var total_files_altered = 0;
 var metamask_cnt = 0;
+var ycounter=0;
 
 
 function init() {
@@ -85,6 +86,7 @@ file_length = -1;
 existing_file = [];
 html_uploaded_cnt = -1;
 html_required_cnt = 0;
+ycounter=0;
 entries_length = 0;
 html_entry_cnt = 0;
 check_for_only_html = 0;
@@ -268,7 +270,13 @@ function uploadHashToBlockChain(name, hash) {
 		  });
 	}).then(function () {
 		console.log('File uploaded successfully');
-		$("#loadingConfirmation").append("<div style='height:25px;margin-top:10px;'><i class='fa fa-check-circle' style='color:green;'></i></div>")
+		ycounter+=1;
+		var fileStr= "fileNumber"+String(ycounter);
+		$("#"+fileStr).removeClass("fa-clock-o");
+		document.getElementById(fileStr).style.color = "green";
+		$("#"+fileStr).addClass("fa-check-circle");
+		document.getElementById(fileStr).style.color = "green";
+		//$("#loadingConfirmation").append("<div style='height:25px;margin-top:10px;'><i class='fa fa-check-circle' style='color:green;'></i></div>");
 		metamask_cnt++;
 		console.log(name);
 		console.log("Testing Successfully");
@@ -278,7 +286,7 @@ function uploadHashToBlockChain(name, hash) {
 			//hide modal
 			$('.fileListDuringUpload').removeClass('opened1');
 			//refresh page
-			// location.reload();
+			location.reload();
 		}
 	}).catch(function(err) {
 		console.log(err);
@@ -293,7 +301,13 @@ function updateHashOnBlockChain(name, hash) {
 		  });
 	}).then(function () {
 		console.log('File updated successfully');
-		$("#loadingConfirmation").append("<div style='height:25px;margin-top:10px;'><i class='fa fa-check-circle' style='color:green;'></i></div>");
+		ycounter+=1;
+		var fileStr= "fileNumber"+String(ycounter);
+		$("#"+fileStr).removeClass("fa-clock-o");
+		document.getElementById(fileStr).style.color = "green";
+		$("#"+fileStr).addClass("fa-check-circle");
+		
+		//$("#loadingConfirmation").append("<div style='height:25px;margin-top:10px;'><i class='fa fa-check-circle' style='color:green;'></i></div>");
 		metamask_cnt++;
 		console.log("Testing Successfully");
 		console.log(metamask_cnt,total_files_altered);
@@ -302,7 +316,7 @@ function updateHashOnBlockChain(name, hash) {
 			//hide modal
 			$('.fileListDuringUpload').removeClass('opened1');
 			//refresh page
-			// location.reload();
+			location.reload();
 		}
 	}).catch(function(err) {
 		console.log(err);
@@ -773,6 +787,8 @@ function refract_notexisting_file(html) {
 		{
 			//Handle Here
 			console.log(tag[j].href);
+			if(tag[j].href.startsWith("http"))
+			continue;
 			var changedFileName = getChangedFileName(tag[j].href.split('/'));
 			console.log("refract"+" "+changedFileName);
 			tag[j].href = App.website_address + '/' + changedFileName;
@@ -939,6 +955,7 @@ console.log(window);
 				console.log('entries', entries);
 				entries_length = entries.length;
 				console.log(entries.length);
+				var xcounter=0;
 				entries.forEach(function(entry) {
 					// $("#mainLoading").show();
 					// $("#portal").hide();
@@ -958,11 +975,14 @@ console.log(window);
 					var extension = dirName[dirLength-1].toLowerCase().split('.');
 
 					if(extension.length > 1){
+						xcounter+=1;
 						var extension = extension[extension.length-1].toLowerCase();
 						if(extension === 'htm' || extension === 'html')
 							html_entry_cnt++;
 						console.log(extension);
+						ycounter=0;
 						$("#fileBeingUploadedList").append("<div style='height:25px;margin-top:10px;'>"+a.text+"</div>");
+						$("#loadingConfirmation").append("<div style='height:25px;margin-top:10px;'><i  id='fileNumber"+String(xcounter)+"' class='fa fa-clock-o' style='color:red;'></i></div>");
 						li.appendChild(a);
 						getResponse(entry,li,a,extension,changedFileName);
 					}
