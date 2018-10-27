@@ -1,0 +1,60 @@
+</!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+    <div id="mainLoading" style="width:100%;margin-top:10%">
+        <center>
+    <img src="loading.gif" style="">
+    </center>
+    </div>
+<div id="createWebsiteForm" style="display:none">
+	<form onSubmit="createWebsite(); return false;" role="form">
+		<input type="text" id="websiteName" placeholder="Website Name" required />
+		<button type="submit">Create</button>
+    </form>
+    
+    <div id="file_upload_form">
+        <ol id="demo-container">
+            <li>
+                <label>
+                    <span class="form-label">choose a zip file</span>
+                    <input type="file" accept="application/zip" id="file-input">
+                </label>
+            </li>
+            <li style="display:none">
+                <label>
+                    <span class="form-label">choose temporary storage</span>
+                    <select id="creation-method-input" style="display:none">
+                        <option value="Blob">RAM</option>
+                    </select>
+                </label>
+            </li>
+        </ol>
+
+    </div>
+</div>
+</body>
+
+<!-- <script>
+        var fileInputHandler = document.getElementById("file-input");
+        if(fileInputHandler){
+            fileInputHandler.onchange=function(){
+               // load_Zip();
+            }
+        }
+    </script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.min.js"></script>
+<script type="text/javascript" src="lib/zip/zip.js"></script>
+<script type="text/javascript" src="lib/zip/zip-ext.js"></script>
+<script type="text/javascript" src="js/buffer.js"></script>
+<script type="text/javascript" src="js/ipfs.js"></script>
+<script src="js/app.js"></script>
+
+</html>
