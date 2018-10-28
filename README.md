@@ -1,7 +1,17 @@
 # MissionImpossible
 <hr>
-These days, it is really costly for people to buy their domains and hosting services for their websites.<br>
-Our team MissionImpossible introduces you to BC Hosting, a really reliable, secure and cost-efficient solution for hosting your static websites.
+# BC Hosting
+BC hosting a product which make possible for the user to host website using blockchain technology. <br />
+This gives us following benifits:
+<ol>
+  <li>The website becomes relaible.</li>
+  <li>The website becomes secure.</li>
+  <li>The website becomes fast.</li>
+  <li>The website becomes scalable.</li>
+  <li>The website becomes decentralized.</li>
+  <li>The website becomes cost-efficient.</li>
+</ol>
+Currently we have solutions only for static file hosting.
 <br><br>
 BC Hosting uses Blockchain for handling all the transactions, that provide security and reliability of all the transactions.
 <br><br>
